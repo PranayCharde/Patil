@@ -4,9 +4,9 @@ import { CheckCircle } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 const backgroundImages = [
-  "https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&q=80&w=1600",
-  "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80&w=1600",
-  "https://images.unsplash.com/photo-1556761175-5973dc0f32e7?auto=format&fit=crop&q=80&w=1600"
+ "src/assets/135_3-1-copyright.jpg", 
+ "src/assets/135_3-2-copyright.jpg",
+ "src/assets/135_3-3-copyright.jpg",
 ];
 
 export function Hero() {
@@ -49,19 +49,19 @@ export function Hero() {
           transition={{ duration: 0.8, delay: 0.5 }}
           className="flex-1 space-y-6 text-white"
         >
-          <span className="text-sm font-bold tracking-wider text-primary uppercase">Business Consulting</span>
+          <span className="text-sm font-bold tracking-wider text-primary uppercase">Advanced Business Consulting</span>
           <h1 className="text-4xl md:text-6xl font-bold leading-tight">
-            Trusted experts in <br className="hidden md:block" />
-            <span className="text-primary-light text-cyan-400">business matters</span>
+            We help you <br className="hidden md:block" />
+            <span className="text-white">build the future</span>
           </h1>
           <p className="text-lg text-gray-200 max-w-lg">
             We provide comprehensive solutions to help your business grow and succeed in today's competitive market.
           </p>
           
           <ul className="space-y-3">
-            {['Money management', 'Grow revenues', 'Sales and marketing'].map((item, index) => (
+            {['Strategy & Planning', 'Program Management', 'Investment Policy'].map((item, index) => (
               <li key={index} className="flex items-center gap-3 text-gray-100">
-                <CheckCircle className="w-5 h-5 text-cyan-400" />
+                <CheckCircle className="w-5 h-5 text-primary" />
                 <span>{item}</span>
               </li>
             ))}

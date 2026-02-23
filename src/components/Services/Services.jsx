@@ -1,57 +1,68 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowRight, Box, BarChart2, Target } from 'lucide-react';
+import { ArrowRight, BarChart2, Target, Briefcase, TrendingUp } from 'lucide-react';
+import { motion } from 'framer-motion';
 
 const services = [
   {
-    icon: <Box className="w-8 h-8 text-primary" />,
-    title: 'Business planning',
-    description: 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit commodo.',
+    icon: <Briefcase className="w-10 h-10 text-primary" />,
+    title: 'Business Planning',
+    description: 'Developing clear strategies to achieve your long-term business goals.',
     link: '/services/planning'
   },
   {
-    icon: <Box className="w-8 h-8 text-primary" />, // Using Box as placeholder, can swap
-    title: 'Consulting service',
-    description: 'Aenean massa. Cum sociis natoque penatibus et magnis dis.',
+    icon: <BarChart2 className="w-10 h-10 text-primary" />,
+    title: 'Consulting Service',
+    description: 'Expert advice to optimize your business operations and performance.',
     link: '/services/consulting'
   },
   {
-    icon: <Target className="w-8 h-8 text-primary" />,
-    title: 'Inventory management',
-    description: 'Pede justo, fringilla vel, aliquet nec, vulputate eget, arcu.',
+    icon: <Target className="w-10 h-10 text-primary" />,
+    title: 'Inventory Management',
+    description: 'Efficient tracking and management of your business assets and stock.',
     link: '/services/inventory'
+  },
+  {
+    icon: <TrendingUp className="w-10 h-10 text-primary" />,
+    title: 'Sales & Marketing',
+    description: 'Boosting your market presence and driving revenue growth.',
+    link: '/services/marketing'
   }
 ];
 
 export function Services() {
   return (
-    <section className="py-20 bg-white">
+    <section className="py-24 bg-light">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
-          <span className="text-sm font-bold tracking-wider text-gray-500 uppercase">Our Business Services</span>
+          <span className="text-sm font-bold tracking-wider text-gray-500 uppercase">What We Do</span>
           <h2 className="text-4xl font-bold text-slate-900 mt-2">
-            Your results are our <br />
-            <span className="text-primary">top priority!</span>
+            Our Services
           </h2>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {services.map((service, index) => (
-            <div key={index} className="group p-8 rounded-2xl bg-white border border-gray-100 shadow-lg hover:shadow-2xl transition-all duration-300 text-center relative overflow-hidden">
-              <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-primary to-accent transform scale-x-0 group-hover:scale-x-100 transition-transform"></div>
-              
-              <div className="w-20 h-20 mx-auto bg-slate-50 rounded-full flex items-center justify-center mb-6 group-hover:bg-primary/10 transition-colors">
-                {service.icon}
-              </div>
-              
-              <h3 className="text-xl font-bold text-slate-900 mb-4">{service.title}</h3>
-              <p className="text-gray-600 mb-6">{service.description}</p>
-              
-              <Link to={service.link} className="inline-flex items-center text-primary font-medium hover:gap-2 transition-all">
-                Read More <ArrowRight className="w-4 h-4 ml-1" />
-              </Link>
-            </div>
-          ))}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+           {services.map((service, index) => (
+             <motion.div 
+               key={index} 
+               initial={{ opacity: 0, y: 30 }}
+               whileInView={{ opacity: 1, y: 0 }}
+               transition={{ duration: 0.5, delay: index * 0.1 }}
+               viewport={{ once: true }}
+               className="group p-8 rounded-xl bg-white shadow-sm hover:shadow-xl transition-all duration-300 text-center border-b-4 border-transparent hover:border-primary"
+             >
+               <div className="mb-6 flex justify-center group-hover:scale-110 transition-transform duration-300">
+                 {service.icon}
+               </div>
+               
+               <h3 className="text-xl font-bold text-slate-900 mb-4">{service.title}</h3>
+               <p className="text-gray-600 mb-6 leading-relaxed">{service.description}</p>
+               
+               <Link to={service.link} className="inline-flex items-center text-primary font-bold hover:gap-2 transition-all uppercase text-sm tracking-wider">
+                 Read More <ArrowRight className="w-4 h-4 ml-2" />
+               </Link>
+             </motion.div>
+           ))}
         </div>
       </div>
     </section>

@@ -1,50 +1,70 @@
 import React from 'react';
-import { Shield } from 'lucide-react';
+import { Shield, Mail, Phone, MapPin } from 'lucide-react';
 
 export function Footer() {
   return (
-    <footer className="bg-slate-900 text-gray-400 py-12">
-      <div className="container mx-auto px-4 grid grid-cols-1 md:grid-cols-4 gap-8">
-        <div>
-          <div className="flex items-center gap-2 mb-4">
-            <Shield className="w-8 h-8 text-primary" />
-            <span className="text-2xl font-bold text-white">Patil</span>
+    <footer className="bg-dark text-white pt-20 pb-10">
+      <div className="container mx-auto px-4">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+          
+          {/* Company Info */}
+          <div className="space-y-6">
+            <h3 className="text-2xl font-bold text-white">Patil Associate</h3>
+            <p className="text-gray-400 leading-relaxed">
+              We provide comprehensive business solutions to help you grow and succeed in today's competitive market.
+            </p>
           </div>
-          <p className="mb-4">
-            Trusted experts in business matters. We provide comprehensive enterprise services & support.
-          </p>
+          
+          {/* Quick Links */}
+          <div>
+            <h3 className="text-xl font-bold text-white mb-6">Quick Links</h3>
+            <ul className="space-y-4">
+              <li><a href="#" className="text-gray-400 hover:text-primary transition-colors">About Us</a></li>
+              <li><a href="#" className="text-gray-400 hover:text-primary transition-colors">Our Services</a></li>
+              <li><a href="#" className="text-gray-400 hover:text-primary transition-colors">Consulting</a></li>
+              <li><a href="#" className="text-gray-400 hover:text-primary transition-colors">Finance</a></li>
+            </ul>
+          </div>
+
+          {/* Contact */}
+           <div>
+            <h3 className="text-xl font-bold text-white mb-6">Contact</h3>
+            <ul className="space-y-4">
+              <li className="flex items-start gap-3 text-gray-400">
+                <MapPin className="w-5 h-5 text-primary mt-1" />
+                <span>47 Bakery Street, London, UK</span>
+              </li>
+              <li className="flex items-center gap-3 text-gray-400">
+                <Phone className="w-5 h-5 text-primary" />
+                <span>+44 123 456 7890</span>
+              </li>
+              <li className="flex items-center gap-3 text-gray-400">
+                <Mail className="w-5 h-5 text-primary" />
+                <span>info@Patil.com</span>
+              </li>
+            </ul>
+          </div>
+
+          {/* Newsletter */}
+          <div>
+             <h3 className="text-xl font-bold text-white mb-6">Newsletter</h3>
+             <p className="text-gray-400 mb-6">Subscribe for latest updates.</p>
+             <div className="flex">
+               <input 
+                 type="email" 
+                 placeholder="Email address" 
+                 className="bg-slate-800 border-none p-3 rounded-l-lg w-full focus:ring-2 focus:ring-primary text-white outline-none" 
+               />
+               <button className="bg-primary hover:bg-primary-dark text-white px-6 rounded-r-lg font-medium transition-colors">
+                 Go
+               </button>
+             </div>
+          </div>
         </div>
         
-        <div>
-          <h3 className="text-white font-bold mb-4">Quick Links</h3>
-          <ul className="space-y-2">
-            <li><a href="#" className="hover:text-primary">About Us</a></li>
-            <li><a href="#" className="hover:text-primary">Our Services</a></li>
-            <li><a href="#" className="hover:text-primary">Consulting</a></li>
-            <li><a href="#" className="hover:text-primary">Finance</a></li>
-          </ul>
+        <div className="border-t border-gray-800 pt-8 text-center text-sm text-gray-500">
+          <p>© 2024 Patil Associate. All rights reserved.</p>
         </div>
-
-         <div>
-          <h3 className="text-white font-bold mb-4">Contact</h3>
-          <ul className="space-y-2">
-            <li>47 Bakery Street, London, UK</li>
-            <li>+44 123 456 7890</li>
-            <li>info@Patil.com</li>
-          </ul>
-        </div>
-
-        <div>
-           <h3 className="text-white font-bold mb-4">Newsletter</h3>
-           <p className="mb-4">Subscribe for latest updates.</p>
-           <div className="flex">
-             <input type="email" placeholder="Email address" className="bg-slate-800 border-none p-2 rounded-l w-full focus:ring-1 focus:ring-primary" />
-             <button className="bg-primary hover:bg-primary-dark text-white px-4 rounded-r">Go</button>
-           </div>
-        </div>
-      </div>
-      <div className="container mx-auto px-4 border-t border-slate-800 mt-8 pt-8 text-center text-sm">
-        © 2024 Patil. All rights reserved.
       </div>
     </footer>
   );

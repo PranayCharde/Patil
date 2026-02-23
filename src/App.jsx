@@ -6,12 +6,14 @@ import { ServicesPage } from './pages/Services';
 import { AboutPage } from './pages/About';
 import { BlogPage } from './pages/Blog';
 import { ContactPage } from './pages/Contact';
+import { FloatingUI } from './components/layout/FloatingUI';
 import './App.css';
 
 function App() {
   return (
     <Router>
-      <div className="flex flex-col min-h-screen">
+      <div className="flex flex-col min-h-screen relative">
+        <FloatingUI />
         <Navbar />
         <main className="flex-grow">
           <Routes>
